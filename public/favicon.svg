@@ -1,3 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-  <path fill-rule="evenodd" clip-rule="evenodd" d="M27.562 26L17.17 8.928l2.366-3.888L17.828 4L16 7.005L14.17 4l-1.708 1.04l2.366 3.888L4.438 26H2v2h28v-2zM16 10.85L25.22 26H17v-8h-2v8H6.78z" fill="#222" />
+
+<svg t="1694351289858" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7269" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32">
+<path d="M320 384h448v64H320zM768 512v-64h128v64H768zM896 512h64v256h-64zM768 768h128v64H768zM320 832h448v64H320zM192 768h128v64H192zM128 512h64v256h-64zM192 448h128v64H192zM320 576h64v128h-64zM704 576h64v128h-64z" fill="#515151" p-id="7270"></path>
 </svg>

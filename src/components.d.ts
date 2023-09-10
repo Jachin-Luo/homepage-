@@ -7,11 +7,20 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    ICustomBilibili: typeof import('~icons/custom/bilibili')['default']
+    List: typeof import('./components/List.vue')['default']
+    ListPosts: typeof import('./components/ListPosts.vue')['default']
+    Logo: typeof import('./components/Logo.vue')['default']
+    Personal: typeof import('./components/md/personal.md')['default']
     README: typeof import('./components/README.md')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SubNav: typeof import('./components/SubNav.vue')['default']
     TheCounter: typeof import('./components/TheCounter.vue')['default']
     TheFooter: typeof import('./components/TheFooter.vue')['default']
+    TheHeader: typeof import('./components/TheHeader.vue')['default']
     TheInput: typeof import('./components/TheInput.vue')['default']
+    Wrapper: typeof import('./components/Wrapper.vue')['default']
+    WrapperPost: typeof import('./components/WrapperPost.vue')['default']
   }
 }

@@ -1,3 +1,10 @@
+/*
+ * @Descripttion:
+ * @Author:
+ * @Date: 2023-09-10 17:57:07
+ * @LastEditTime: 2023-09-10 22:04:03
+ * @FilePath: \homepage-\src\main.ts
+ */
 import { ViteSSG } from 'vite-ssg'
 import { setupLayouts } from 'virtual:generated-layouts'
 

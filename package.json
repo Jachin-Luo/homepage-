@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.39.7",
-    "@iconify-json/carbon": "^1.1.18",
+    "@iconify/json": "^2.2.113",
     "@intlify/unplugin-vue-i18n": "^0.12.2",
     "@types/markdown-it-link-attributes": "^3.0.1",
     "@types/nprogress": "^0.2.0",
@@ -55,6 +55,7 @@
     "typescript": "^5.1.6",
     "unocss": "^0.53.5",
     "unplugin-auto-import": "^0.16.6",
+    "unplugin-icons": "^0.17.0",
     "unplugin-vue-components": "^0.25.1",
     "unplugin-vue-macros": "^2.3.6",
     "vite": "^4.4.3",

@@ -11,10 +11,23 @@ import { VitePWA } from 'vite-plugin-pwa'
 import VueI18n from '@intlify/unplugin-vue-i18n/vite'
 import VueDevTools from 'vite-plugin-vue-devtools'
 import LinkAttributes from 'markdown-it-link-attributes'
-import Unocss from 'unocss/vite'
 import Shiki from 'markdown-it-shiki'
 import VueMacros from 'unplugin-vue-macros/vite'
 import WebfontDownload from 'vite-plugin-webfont-dl'
+
+/*
+  图标库icon
+  svg解析
+  自定义图标-svg解析
+ */
+import Icons from 'unplugin-icons/vite'
+import { FileSystemIconLoader } from 'unplugin-icons/loaders'
+import IconsResolver from 'unplugin-icons/resolver'
+
+// unoCss
+import UnoCSS from 'unocss/vite'
+import presetUno from '@unocss/preset-uno'
+import presetAttributify from '@unocss/preset-attributify'
 
 export default defineConfig({
   resolve: {
@@ -24,6 +37,26 @@ export default defineConfig({
   },
 
   plugins: [
+    // https://github.com/antfu/unocss
+    // see uno.config.ts for config
+    UnoCSS({
+      presets: [presetUno(), presetAttributify()],
+    }),
+    // 图标
+    Icons({
+      compiler: 'vue3',
+      autoInstall: true,
+      defaultClass: 'inline',
+      defaultStyle: 'vertical-align: sub;',
+      // 自定义svg图标
+      customCollections: {
+        // 给svg文件设置fill="currentColor"属性，使图标的颜色具有适应性
+        custom: FileSystemIconLoader('src/assets/svg/custom', svg =>
+          svg.replace(/^<svg /, '<svg fill="currentColor" '),
+        ),
+      },
+    }),
+
     VueMacros({
       plugins: {
         vue: Vue({
@@ -64,15 +97,20 @@ export default defineConfig({
       // allow auto import and register components used in markdown
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       dts: 'src/components.d.ts',
-    }),
+      // 自定义图标解析器
+      resolvers: [
+        IconsResolver({
+          prefix: 'i',
+          customCollections: ['custom'],
+        }),
+      ],
 
-    // https://github.com/antfu/unocss
-    // see uno.config.ts for config
-    Unocss(),
+    }),
 
     // https://github.com/antfu/vite-plugin-vue-markdown
     // Don't need this? Try vitesse-lite: https://github.com/antfu/vitesse-lite
     Markdown({
+      wrapperComponent: 'Wrapper',
       wrapperClasses: 'prose prose-sm m-auto text-left',
       headEnabled: true,
       markdownItSetup(md) {
