@@ -82,12 +82,12 @@ onMounted(() => {
     class="m-auto mb-8 prose"
     :class="[frontmatter.wrapperClass]"
   >
-    <h1 class="slide-enter-50 mb-0">
+    <h1 class="mb-0 slide-enter-50">
       {{ frontmatter.display ?? frontmatter.title }}
     </h1>
     <p
       v-if="frontmatter.date"
-      class="slide-enter-50 opacity-50 !-mt-6"
+      class="opacity-50 slide-enter-50 !-mt-6"
     >
       {{ frontmatter.date }} <span v-if="frontmatter.duration">· {{ frontmatter.duration }}</span>
     </p>
