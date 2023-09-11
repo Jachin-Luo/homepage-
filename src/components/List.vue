@@ -12,22 +12,22 @@ window.console.log('xprops', props)
 
 const router = useRouter()
 const routes = router.getRoutes()
-  .filter(i => i.path.startsWith('/docs') && i.meta.frontmatter.date && !i.meta.frontmatter.draft)
-  .filter(i => !i.path.endsWith('.html') && (i.meta.frontmatter.type || 'blog').split('+').includes(props.type))
-  .map(i => ({
-    path: i.meta.frontmatter.redirect || i.path,
-    title: i.meta.frontmatter.title,
-    date: i.meta.frontmatter.date,
-    lang: i.meta.frontmatter.lang,
-    duration: i.meta.frontmatter.duration,
-    recording: i.meta.frontmatter.recording,
-    upcoming: i.meta.frontmatter.upcoming,
-    redirect: i.meta.frontmatter.redirect,
-  }))
+//   .filter(i => i.path.startsWith('/docs') && i.meta.frontmatter.date && !i.meta.frontmatter.draft)
+//   .filter(i => !i.path.endsWith('.html') && (i.meta.frontmatter.type || 'blog').split('+').includes(props.type))
+//   .map(i => ({
+//     path: i.meta.frontmatter.redirect || i.path,
+//     title: i.meta.frontmatter.title,
+//     date: i.meta.frontmatter.date,
+//     lang: i.meta.frontmatter.lang,
+//     duration: i.meta.frontmatter.duration,
+//     recording: i.meta.frontmatter.recording,
+//     upcoming: i.meta.frontmatter.upcoming,
+//     redirect: i.meta.frontmatter.redirect,
+//   }))
 window.console.log('routes', routes)
 const posts = computed(() =>
-  [...(props.posts || routes), ...props.extra || []]
-    .sort((a, b) => +new Date(b.date) - +new Date(a.date)),
+  [...(props.posts || routes), ...props.extra || []],
+  // .sort((a, b) => +new Date(b.date) - +new Date(a.date)),
   // .filter(i => !englishOnly.value || i.lang !== 'zh'),
 )
 

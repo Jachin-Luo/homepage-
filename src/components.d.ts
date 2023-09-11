@@ -9,9 +9,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     ICustomBilibili: typeof import('~icons/custom/bilibili')['default']
     List: typeof import('./components/List.vue')['default']
-    ListPosts: typeof import('./components/ListPosts.vue')['default']
     Logo: typeof import('./components/Logo.vue')['default']
-    Personal: typeof import('./components/md/personal.md')['default']
     README: typeof import('./components/README.md')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
@@ -21,6 +19,5 @@ declare module 'vue' {
     TheHeader: typeof import('./components/TheHeader.vue')['default']
     TheInput: typeof import('./components/TheInput.vue')['default']
     Wrapper: typeof import('./components/Wrapper.vue')['default']
-    WrapperPost: typeof import('./components/WrapperPost.vue')['default']
   }
 }
