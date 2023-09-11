@@ -94,16 +94,16 @@ const r = undefined || 100 // r 等于 100
 只有当 ??= 左侧的值为 null 或者 undefined 的时候，才会将右侧变量的值赋值给左侧变量，其他所有值都不会进行赋值，在某些场景下可以省略很多代码。
 
 ```js
-let a = null
+const a = null
 let b
 const c = 100
 const d = 200
 
 // 因为 a 的值为 null，所以会将 c 的值赋值给 a , 所以最终 a = 100
-a ??= c
+// a ??= c
 
 // 因为 b 的值为 undefined，所以会将 d 的值赋值给 b , 所以最终 b = 200
-b ??= d
+// b ??= d
 ```
 
 ## video标签解决不能自动播放的问题
