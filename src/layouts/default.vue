@@ -11,7 +11,6 @@ window.console.log(router.getRoutes())
 </script>
 
 <template>
-  <TheHeader />
   <main
     px-4 py-10
     text="center gray-700 dark:gray-200"
@@ -22,5 +21,4 @@ window.console.log(router.getRoutes())
       [Default Layout]
     </div>
   </main>
-  <TheFooter />
 </template>

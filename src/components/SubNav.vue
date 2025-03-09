@@ -1,13 +1,9 @@
-<!--
- * @Descripttion:
- * @Author:
- * @Date: 2023-09-10 22:08:29
- * @LastEditTime: 2023-09-10 22:09:20
- * @FilePath: \homepage-\src\components\SubNav.vue
--->
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
 
+const props = defineProps<{
+  type?: string
+}>()
 const inactiveStyle = 'opacity-20 hover:opacity-50'
 const activeStyle = 'opacity-100 underline'
 
@@ -16,18 +12,23 @@ const route = useRoute()
 
 <template>
   <div class="m-auto mb-8 select-none prose animate-none! op100!">
-    <div mb-0 flex="~ col gap-1 sm:row sm:gap-3 wrap" text-3xl>
-      <RouterLink to="/posts" class="!border-none" :class="route.path === '/posts' ? activeStyle : inactiveStyle">
+    <div v-if="props.type === 'exam'" mb-0 flex="~ col gap-1 sm:row sm:gap-3 wrap" text-3xl>
+      <RouterLink to="/shenlun" class="!border-none" :class="route.path === '/exam' ? activeStyle : inactiveStyle">
+        申论
+      </RouterLink>
+      <RouterLink to="/xingce" class="!border-none" :class="route.path === '/xingce' ? activeStyle : inactiveStyle">
+        行测
+      </RouterLink>
+    </div>
+    <div v-if="props.type === 'code'" mb-0 flex="~ col gap-1 sm:row sm:gap-3 wrap" text-3xl>
+      <RouterLink to="/base" class="!border-none" :class="route.path === '/base' ? activeStyle : inactiveStyle">
         基础
       </RouterLink>
-      <RouterLink to="/talks" class="!border-none" :class="route.path === '/talks' ? activeStyle : inactiveStyle">
+      <RouterLink to="/vue" class="!border-none" :class="route.path === '/vue' ? activeStyle : inactiveStyle">
         vue
       </RouterLink>
-      <RouterLink to="/podcasts" class="!border-none" :class="route.path === '/podcasts' ? activeStyle : inactiveStyle">
+      <RouterLink to="/react" class="!border-none" :class="route.path === '/react' ? activeStyle : inactiveStyle">
         react
-      </RouterLink>
-      <RouterLink to="/streams" class="!border-none" :class="route.path === '/streams' ? activeStyle : inactiveStyle">
-        其他
       </RouterLink>
     </div>
   </div>

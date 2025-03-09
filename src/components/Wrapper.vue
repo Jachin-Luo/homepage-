@@ -1,4 +1,6 @@
 <script setup lang='ts'>
+import dayjs from 'dayjs'
+
 const { frontmatter } = defineProps({
   frontmatter: {
     type: Object,
@@ -74,9 +76,11 @@ onMounted(() => {
 </script>
 
 <template>
-  <!-- <ClientOnly v-if="frontmatter.plum">
-    <Plum /> 不明觉厉
-  </ClientOnly> -->
+  <!-- 页面效果 -->
+  <ClientOnly v-if="frontmatter.plum">
+    <Plum />
+  </ClientOnly>
+  <!-- 标题，小标题，时间 -->
   <div
     v-if="frontmatter.display ?? frontmatter.title"
     class="m-auto mb-8 prose"
@@ -89,7 +93,7 @@ onMounted(() => {
       v-if="frontmatter.date"
       class="opacity-50 slide-enter-50 !-mt-6"
     >
-      {{ frontmatter.date }} <span v-if="frontmatter.duration">· {{ frontmatter.duration }}</span>
+      {{ dayjs(frontmatter.date).format('YYYY-MM-DD') }} <span v-if="frontmatter.duration">· {{ frontmatter.duration }}</span>
     </p>
     <p
       v-if="frontmatter.subtitle"
@@ -104,6 +108,7 @@ onMounted(() => {
       This is a draft post, the content may be incomplete. Please check back later.
     </p>
   </div>
+
   <article ref="content" :class="[frontmatter.tocAlwaysOn ? 'toc-always-on' : '', frontmatter.class]">
     <slot />
   </article>

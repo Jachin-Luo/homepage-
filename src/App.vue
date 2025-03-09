@@ -6,6 +6,7 @@
  * @FilePath: \homepage-\src\App.vue
 -->
 <script setup lang="ts">
+const imageModel = ref<HTMLImageElement>()
 // https://github.com/vueuse/head
 // you can use this to manipulate the document head in any components,
 // they will be rendered correctly in the html results with vite-ssg
@@ -29,5 +30,15 @@ useHead({
 </script>
 
 <template>
-  <RouterView />
+  <NavBar />
+  <main class="of-x-hidden px-7 py-10">
+    <RouterView />
+    <Footer />
+  </main>
+  <Transition name="fade">
+    <div v-if="imageModel" fixed bottom-0 left-0 right-0 top-0 z-500 backdrop-blur-7 @click="imageModel = undefined">
+      <div absolute bottom-0 left-0 right-0 top-0 z--1 bg-black:30 />
+      <img :src="imageModel.src" :alt="imageModel.alt" h-full w-full object-contain>
+    </div>
+  </Transition>
 </template>
