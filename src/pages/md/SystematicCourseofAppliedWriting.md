@@ -1,8 +1,9 @@
 ---
-date: 2023-9-8 17:49:40
+date: 2029-01-01 17:49:40
 title: Systematic Course of Applied Writing
 duration: 
 subtitle: 
+type: shenlun
 ---
 
 [[toc]]

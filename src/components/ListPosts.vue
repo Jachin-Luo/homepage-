@@ -9,10 +9,11 @@ const props = defineProps<{
   posts?: Post[]
   extra?: Post[]
 }>()
-
+console.log('props', props.type)
 const router = useRouter()
 const routes: Post[] = router.getRoutes()
   .filter(i => i.path.startsWith('/md') && i.props.default)
+  .filter(i => i.meta.frontmatter.type && i.meta.frontmatter.type === props.type)
 
 // .filter(i => i.path.startsWith('/exam') && i.meta.frontmatter.date && !i.meta.frontmatter.draft)
 // .filter(i => !i.path.endsWith('.html') && (i.meta.frontmatter.type || 'blog').split('+').includes(props.type))

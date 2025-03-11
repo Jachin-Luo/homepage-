@@ -6,4 +6,4 @@ display: ''
 
 <SubNav  type='exam' />
 
-<ListPosts only-date type="xingce" />
+<ListPosts only-date type="shenlun" />

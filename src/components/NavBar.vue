@@ -30,7 +30,7 @@ const { y: scroll } = useWindowScroll()
     <nav class="nav">
       <div class="spacer" />
       <div class="right" print:op0>
-        <RouterLink to="/exam" title="考公">
+        <RouterLink to="/exam/shenlun" title="考公">
           <span class="lt-md:hidden">考公</span>
           <div i-ri-lightbulb-line class="md:hidden" />
         </RouterLink>

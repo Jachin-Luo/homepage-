@@ -13,10 +13,10 @@ const route = useRoute()
 <template>
   <div class="m-auto mb-8 select-none prose animate-none! op100!">
     <div v-if="props.type === 'exam'" mb-0 flex="~ col gap-1 sm:row sm:gap-3 wrap" text-3xl>
-      <RouterLink to="/shenlun" class="!border-none" :class="route.path === '/exam' ? activeStyle : inactiveStyle">
+      <RouterLink to="/exam/shenlun" class="!border-none" :class="route.path === '/exam/shenlun' ? activeStyle : inactiveStyle">
         申论
       </RouterLink>
-      <RouterLink to="/xingce" class="!border-none" :class="route.path === '/xingce' ? activeStyle : inactiveStyle">
+      <RouterLink to="/exam/xingce" class="!border-none" :class="route.path === '/exam/xingce' ? activeStyle : inactiveStyle">
         行测
       </RouterLink>
     </div>

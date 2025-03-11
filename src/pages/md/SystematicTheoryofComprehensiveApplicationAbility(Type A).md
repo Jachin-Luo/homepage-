@@ -1,8 +1,9 @@
 ﻿---
-date: 2025-01-01 17:49:40
+date: 2029-01-01 17:49:40
 title: Systematic Theory of Comprehensive Application Ability (Type A)
 duration: 
 subtitle: 
+type: shenlun
 ---
 [[toc]]
 
