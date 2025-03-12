@@ -42,7 +42,8 @@
     "vue-demi": "^0.14.5",
     "vue-i18n": "^9.2.2",
     "vue-router": "^4.5.0",
-    "vue-router-better-scroller": "^0.0.0"
+    "vue-router-better-scroller": "^0.0.0",
+    "xmind-embed-viewer": "^1.2.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.39.7",

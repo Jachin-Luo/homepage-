@@ -83,6 +83,9 @@ dependencies:
   vue-router-better-scroller:
     specifier: ^0.0.0
     version: 0.0.0(vue-router@4.5.0)(vue@3.3.4)
+  xmind-embed-viewer:
+    specifier: ^1.2.0
+    version: 1.2.0
 
 devDependencies:
   '@antfu/eslint-config':
@@ -12198,6 +12201,10 @@ packages:
       utf-8-validate:
         optional: true
     dev: true
+
+  /xmind-embed-viewer@1.2.0:
+    resolution: {integrity: sha512-dtsxbeePxhSy3g/Kyc4Oe1K3hfdCmkiyRtvONN2KZ2MqeL/QBFTvL4imCiXfAiLpincl42r87OOA3V3Shcza4A==}
+    dev: false
 
   /xml-name-validator@4.0.0:
     resolution: {integrity: sha512-ICP2e+jsHvAj2E2lIHxa5tjXRlKDJo4IdvPvCXbXQGdzSfmSpNVyIKMvoZHjDY9DP0zV17iI85o90vRFXNccRw==}
